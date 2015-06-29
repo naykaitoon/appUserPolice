@@ -1,0 +1,50 @@
+        <script type="text/javascript">
+
+        if(!$.session.get('userIdSession')){
+            	$.session.clear();
+			 window.location.href = "index.html";
+		 }else{
+         var usId = $.session.get('userIdSession');
+         }
+        </script>
+
+    
+        <!-- IMPORTANT: Do not include a weinre script tag as part of your release builds! -->
+        <!-- Place your remote debugging (weinre) script URL from the Test tab here, if it does not work above -->
+        <!-- <script src="http://debug-software.intel.com/target/target-script-min.js#insertabiglongfunkynumberfromthexdkstesttab"></script> -->
+     <nav role="navigation" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" id="navbt" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="home.html" class="navbar-brand">You Police</a>
+        </div>
+        <!-- MENU -->
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="menu.html" class="linkLocate"><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Home</a></li>
+                <li class="uactive"><a href="photo.html" class="linkLocate"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span>&nbsp;ถ่ายภาพ</a></li>
+                <li class="uactive"><a href="http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/wait/" class="link"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>&nbsp;ข้อมูลที่ส่ง</a></li>
+                <li class="uactive"><a href="http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/yes/" class="link"><span class="glyphicon glyphicon-ok-circle" aria-hidden="true"></span>&nbsp;ข้อมูลถูกยืนยันว่าผิดจริง</a></li>
+                <li class="uactive"><a href="http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/no/" class="link"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>&nbsp;ข้อมูลที่ถูกปฏิเสธ</a></li>
+                <li class="uactive"><a href="alert.html" class="linkLocate"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span>&nbsp;ขอความช่วยเหลือ SOS</a></li>                    
+            </ul>
+        </div>
+          <!-- END MENU -->
+    </div>
+</nav>
+          <!-- /////////////////////// -->
+          <!-- CENTENT -->
+  <div class="container-fluid">
+        <div class="row" >  
+          <div class="content" id="loaddingStaget"></div>
+             <center><img src="images/upload.gif" id="loaddeding"  width="100" height="100"></center>
+        </div>
+</div>
+
+             <script type="text/javascript" src="js/home.js"></script>

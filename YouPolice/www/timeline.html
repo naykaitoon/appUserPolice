@@ -1,0 +1,52 @@
+<style>
+.bottonmenu{
+    width:25%;
+    text-align: center;
+}
+    .bottonmenuText,photp{
+        font-size: 12px;
+        color: white;
+    }
+    .buttomnav{
+        height: 80px;
+        background-color: #3D3D3D;
+        border-radius: 0px;
+    }
+    .active{
+         background-color: #222222;
+        height: 80px;
+    }
+</style> 
+<nav role="navigation" class="navbar navbar-fixed-bottom buttomnav">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <a href="http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/wait/" class="navbar-brand bottonmenu active"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABQUlEQVRYR+2XjW3CQAyFnzfoJmUD6AbdADoBdBM2ADaBDWCDdoN2gode+ZEbEpL40gtScxICKdz5O/v5YYwkcVo7M5ucP2d7swEgmgGSIwAfZvaVUq9QCUguAcwBKPiLme2jEK0BSK4BTF3AJAgPEL1E0r6HAvgG0KSW45Irf0qQkVRENDADsHLBDgAm0W5oDaDAJAWhTtCtw8F1VgggkuqqPdkASC6UPAAbX64sAAXvkNBlXj8O6gH0QJRdL+lFL7+usR7KB7q+eaPzfAbUz39VAv/bIbBrrD5E+Mu4sgCczeuS3XX2NrwnhsoMuN5dmtl7I0UFvlQKUDJ0KG1vgfNrt3gAOZMM4gmA5r3i0rOk+a+MZjCiGw2QVAm2AJ67Gjpad0EBYgfgNTrx1KnwrhHpz0fKzF8X/H9NRL2PZFUAR7d68fsL8lNVAAAAAElFTkSuQmCC"/><p class="bottonmenuText">ข้อมูลรอการยืนยัน</p></a>
+             <a href="http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/yes/" class="navbar-brand bottonmenu" ><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACNElEQVRYR7WX/VXCMBTF793ADcQJxAmEDdxAmUCZQJ1AmECdQJxAnECYQN1AJ3ie25P2pCGhCbbvLw5t8n55HzevhGdmNgJwDeACgH6X2oLkPLXIzK4AHAP4AfBM8of1y+7hY6nHyPszkk/h/2a2BnDu/b8BMK0AenSu7e5J3gWRvQHwEIGd04X9s4eT11uckdTpKnP7fwA4ivi4F8DC5d1//gtgBeCrEGzlO3cAYej9LWcCkBMVRm1yPgk3KgSpT69ifkms/SY5EoAFL6g6Va3/MjNTyJXaWOi195TkOgawU0SHkJiZOuEysbY55CAAZjYB8JZwrhSPpAF63juAC72qPiVkLZ3IBnAbK6QqLFX2sj5F0PPSgNvE6d9JKjqNlQCot0+9tQqhCsnv+TEAnT5lLY3IToGZpdqpBWFmIaQPEi3urAiYWUpK5aCCcKlJhf4bwDiWslyArtBWFd3V87G8ZAFoYUKycyTilaRSGLVsAAexT1xiDtTzCn1zp3gHUb1Ud0EoxXuVsEPhQog5SV12lUVqaVMMUBCJLUnVTmNmtqMRBwFkQuz0fK8AHRBSSbVuy3oHSHTH1s0TdWsOk4Igt8q1NP6LpCapqA0SgRwh8LqgvyIscVwK0MtIFgOMaUhsKN25Zg85baQDVCeakvwZcZsaywVxyFieYtV0pPsgHFCXQ3yYlATsZIhPs1yAajYc4uM0B6AZTBsAp2rKlSRUouLPfzmbdr0jhdQwq0/45nr+A8mQYtQkGOI4AAAAAElFTkSuQmCC"/><p class="bottonmenuText">ไม่ผิด</p></a>
+             <a href="http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/no/" class="navbar-brand bottonmenu"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABsklEQVRYR72X7TVEMRCG36mAEnRgVYAK0AEdUAEqoAM6YCtABUsHSqCCOBNJzuTr3knuZvNvzybzPncm8xFCsowxKwC3AM4BfAK4J6LXdJ/mtzHmAMADgH0APwBuiOhbniX5w4m/uQPyrysietaI+j0VWwxxSkT8YXYFgAlxv1cNMWMrgrAACnE1hNJWgCAXp03B7TWPVz2hFPd2GeKIAfiCnbXEF0AG0Sju5dYM8A7guBGAtweITvH/S9jpgXAnXHo9NYRQfuuXvwOcFnsdXlh65EJmAYdilxA2hGkd2BVEuD+lSjgaIsqgCEAUpVEQWfpmAAMhigWsCDAAolo9qwACgsv0kjXZxOYALgFwkeldWftNDU2FYKm4bDrRDCAhapdwW+KzEKU03Lb4JERaiEaJVyFkKR4tXoTwzWhX4hkEt2Mev1868+x3QQcNIxkXGn4LtC4WP3Fne2uFHclMqzIAK+7ne2NMbwg/ekaySNzDd0JYD7D7te23KN4JwbZWLSPZpHgjRLClHclU4kqIyJZmJGsSn4HIbJV6AT+pH8WT+jp9UmuzxtWYOwCHANYAMlt/cY3/UlpZvsMAAAAASUVORK5CYII="/><p class="bottonmenuText">ผิด</p></a>
+            <a href="photo.html" class="navbar-brand photp" id="ppp"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACLUlEQVRYR+2X4VEUQRCF34tAiUCJQIlAjUCIAIlAiUCMQIzAIwIgAiACMAOIQI2gqW9rZp3d2+X2Zs+6ssr5c1V3M9Nfv3ndM2dteXjL8fVvA0TEc0mHkvgcG/e2z8Z+rFYgIl5LuloRPMdd2D4agmgA0mZfiwm/JB3bvh9alDK/lfRyDQ+x32l/vtNm3yXt93686EOkue8lnawZPG/Nukvbd/kLAK4lvVkjk01OPQYgih1/SEL+vwn0kHzzjLglwF6WJkmNTC82ma4kgmNeRrN/C2C7UxGVR3NTAA+pSEnuJuNj8D8AkjBddunbZLQpAhD01Dbr25FUxNgYr1QyV1ZTQX0PTAlYzjmyvVi1KCKYQ8NaGnMAOsEjgmxfpTPmfDvlNgZRC/DN9qd0lkh5XpirzJLMaUBUFg0PMCDbUQuww6YTO+KF7YMEgLdo37MAkLbpmhGBaT+u8oCkg2zSiECNpgfUmvCLbZwNQFNKEwBK6E7nrTmCMpuyiz7FcWMb+ZdUqwFob7VeG58K0CnJGoCyApZcPUJRrpl9BHe295KcmJESfGr8pkR5W6Sq+Tm3Clj/zjaZcKajXS4FahtWRGDez5sAQHogcoP5MNDzuSNOCtDBJ1yNB3ICXD5k10AkNQjCA5Vbr33ORQTdkga09ISbA0BMlKAqmuMYGumO4Mk3+HKeC1CqgSLlIxY1OJr8ABkEBGBqN5vQ8Nae8gAA5wLpNsai+o/Jpmj/AzwCuFwjSwVjvZMAAAAASUVORK5CYII="/><p class="bottonmenuText">ถ่ายภาพ</p></a>
+        </div>
+       
+    </nav>
+  <div class="content" id="loaddingStagettimeline"></div>
+<script>
+    $("#loaddingStagettimeline").load("http://police.cmhost.me/index.php/timelines/getDataTimelineByUsers/wait/"+usId);
+    $(".bottonmenu").click(function(e){
+        e.preventDefault();
+        var hreflink = $(this).attr("href");
+        $("#loaddingStagettimeline").load(hreflink+usId);
+        $(".bottonmenu,.photp").removeClass("active");
+        $(this).addClass("active");
+    });
+     $(".photp").click(function(e){
+         e.preventDefault();
+         $(".photp").addClass("active");
+         $(".bottonmenu").removeClass("active");
+        var hreflinks = $("#ppp").attr("href");
+          $("#loaddingStagettimeline").load(hreflinks);
+    });
+       
+
+    $("#loaddeding").hide();
+    $("#loaddingStaget").show();
+
+</script>

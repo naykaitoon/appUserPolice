@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+      <meta charset="UTF-8">
+
+    <link rel="stylesheet" type="text/css" href="css/index_main.less.css" class="main-less">
+    <link rel="stylesheet" type="text/css" href="app_framework/2.1/css/icons.min.css">
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.css">
+	<style>
+	body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+	</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <script src="cordova.js" id="xdkJScordova_"></script>
+
+        <script src="js/app.js"></script>
+        <!-- for your event code, see README and file comments for details -->
+        <script src="js/init-app.js"></script>
+        <!-- for your init code, see README and file comments for details -->
+        <script src="xdk/init-dev.js"></script>
+        <!-- normalizes device and document ready events, see file for details -->
+        <script type="application/javascript" src="js/jquery.min.js"></script>
+        <script type="application/javascript" src="marginal/marginal-position.min.js"></script>
+        <script type="application/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+        <script type="application/javascript" src="js/jquery.session.js"></script>
+
+  </head>
+
+  <body>
+ <div class="container">
+	<br>
+
+    	<br>
+
+        <h2 class="form-signin-heading">ลงชื่อเข้าใช้งาน</h2>
+        <label for="inputEmail" class="sr-only">username</label>
+        <input type="username" id="username" class="form-control" placeholder="username" required autofocus>
+        <br>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="password" class="form-control" placeholder="password" required>
+		<br>
+        <button class="btn btn-lg btn-primary btn-block" id="loginbt" type="button" onclick="return false;">ล็อกอิน</button>
+          <br>
+          <button type="button" class="btn btn-lg btn-success btn-block" data-toggle="modal" data-target=".bs-register-modal-lg">ลงทะเบียน</button>
+
+
+	<br>
+    <div class="alert alert-danger" id="alertsNon" role="alert"></div>
+     <div class="alert alert-success" id="registerScc" role="registerScc">การลงทะเบียน สำเร็จ รอการยืนยันจากผู้ดูแลระบบ</div>
+    </div> <!-- /container -->
+
+
+
+<div class="modal fade bs-register-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+       <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="closeRe" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="gridSystemModalLabel">ลงทะเบียน</h4>
+           <div class="modal-body">
+           
+              
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="email" class="form-control" id="exampleInputUsername" placeholder="Username">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword" placeholder="Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">ยืนยัน Password</label>
+                        <input type="password" class="form-control" id="exampleInputPasswordc" placeholder="ยืนยัน Password">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputPassword1">ชื่อ</label>
+                        <input type="text" class="form-control" id="exampleInputname" placeholder="ชื่อ">
+                      </div>
+                     <div class="form-group">
+                        <label for="exampleInputPassword1">นามสกุล</label>
+                        <input type="text" class="form-control" id="exampleInputlname" placeholder="นามสกุล">
+                      </div>
+                      
+                        <br>
+                        <div class="alert alert-danger" id="alertRegis"></div>
+                 
+                <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="registerBt">ลงทะเบียน</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">ปิด ยกเลิก</button>
+      </div>
+        
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+
+ $("#alertsNon").hide();
+     $("#alertRegis").hide();
+    $("#registerScc").hide();
+    $("#loginbt").click(function(event){
+            if($("#username").val()==""||$("#password").val()==""){
+				 $("#alertsNon").html("กรุณาระบุ Username และ password ให้ครบถ้วน");
+                $("#alertsNon").show("slow");
+			
+           	
+              setTimeout(  function(){
+                 
+                  $("#alertsNon").hide("slow");
+              
+              },5000);
+			 }else{
+			      event.preventDefault();
+
+                 
+    $.post( "http://police.cmhost.me/index.php/home/verifyLogin", { username: $("#username").val(), password: $("#password").val() })
+      .done(function( data ) {
+          var usIdcheck = data.substring(2);
+             if(usIdcheck!=0){
+                    $.ajax({
+                        url: "http://police.cmhost.me/index.php/home/verifyLoginjson/"+usIdcheck,
+                        dataType: 'jsonp',
+                        jsonp: 'jsoncallback',
+                        success: function(data, status){
+
+                            $.each(data, function(i,item){ 
+                                $.session.set('userIdSession', item.usId);
+                                $.session.set('userNameSession', item.usName);
+                                $.session.set('userLNameSession', item.usLastname);
+                                
+                            });
+                            $("body").load("home.html");
+                        },
+                        error: function(){
+                            
+                        }
+                    });
+              }else{
+                  $("#alertsNon").html("ไม่มี ผู้ใช้งานดังกล่าวอยู่ในระบบ");
+                  $("#alertsNon").show("slow");
+
+
+                  setTimeout(  function(){
+
+                      $("#alertsNon").hide("slow");
+
+                  },5000);
+              }
+      });
+             }
+      
+});
+    
+    
+     $("#registerBt").click(function(e){
+         e.preventDefault();
+         var reusername = $("#exampleInputUsername").val();
+         var repassword = $("#exampleInputPassword").val();
+         var repasswordc = $("#exampleInputPasswordc").val();
+         var rename = $("#exampleInputname").val();
+         var relname = $("#exampleInputlname").val();
+         if(reusername!=""&&repassword!=""&&repasswordc!=""&&rename!=""&&relname!=""&&repassword==repasswordc){
+        
+     $.post( "http://police.cmhost.me/index.php/home/register", { usUsername: reusername, usPassword: repassword, usName: rename, usLastname: relname })
+  .done(function( data ) {
+          $("#closeRe").trigger("click");
+          $("#registerScc").show("slow");
+        
+                    $("#exampleInputUsername").val("");
+                 $("#exampleInputPassword").val("");
+                   $("#exampleInputPasswordc").val("");
+                   $("#exampleInputname").val("");
+                $("#exampleInputlname").val("");
+          setTimeout(  function(){
+                 
+                  $("#registerScc").hide("slow");
+              
+              },10000);
+  });
+         }else{
+            if(repasswordc!=repassword){
+                 $("#alertRegis").html("รหัสผ่านในการยืนยันไม่ถูกต้อง");
+            }else if(reusername==""&&repassword==""&&repasswordc==""&&rename==""&&relname==""){
+                $("#alertRegis").html("กรุณาระบุข้อมูล ให้ครบถ้วน");
+            }
+             $("#alertRegis").show("slow");
+               setTimeout(  function(){
+                
+                  $("#alertRegis").hide("slow");
+              
+              },5000);
+         }
+ 
+});
+</script>
+  </body>
+
+</html>

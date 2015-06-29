@@ -1,0 +1,73 @@
+<br><br><br>      <div class="col-md-10 col-md-offset-1">
+<fieldset>
+    <legend>ถ่ายภาพ</legend>
+
+  <form id="formsSub" class="form-horizontal" >
+      <div class="control-group">
+          <center><img src="images/upload.gif" id="uploading" width="100" height="100"></center>
+          <center><img src="images/noimg.png" width="80" height="auto" id="noimg"  onclick="captureCamera();"></center>
+               <div id="pictures"></div>
+      </div>
+
+
+                                  
+                  
+             <div class="control-group">
+                                <center><button class="btn widget uib_w_2 btn-success d-margins" data-uib="twitter%20bootstrap/button" data-ver="1" id="takePhoto" onclick="captureCamera();" type="button">ถ่ายภาพ</button></center>
+      </div>
+                                <div class="control-group">
+                                    <label class="narrow-control label-inline" for="latitude">latitude :</label>
+                                    <input class="wide-control form-control default input-sm" type="text" id="latitude" name="latitude" value="0" readonly required>
+      </div>
+       <div class="control-group">
+                                    <label class="narrow-control label-inline" for="longitude">longitude :</label>
+                                    <input class="wide-control form-control default input-sm" type="text" id="longitude" name="longitude" value="0" readonly required>
+      </div>      
+               <div class="control-group">
+                              
+                                    <label class="narrow-control label-inline" for="latitude">เรื่อง :</label>
+                                    <input class="wide-control form-control default input-sm" type="text" name="reqTitle" id="reqTitle"  required>
+                                    <input  type="hidden" name="codeImgGen" id="codeImgGen"  >
+      </div>
+       <div class="control-group">
+                                    <label class="narrow-control label-inline" for="longitude">ป้ายทะเบียน:</label>
+                                    <input class="wide-control form-control default input-sm" type="text" name="reqLicensePlate" id="reqLicensePlate"   required>
+      </div>
+       <div class="control-group">
+                                <label class="narrow-control label-inline" for="longitude">จังหวัด  :</label>
+                                    <input class="wide-control form-control default input-sm" type="text" name="reqProvince" id="reqProvince" value="เชียงใหม่" required>
+      </div>
+                
+                                 <div class="control-group">
+                             
+                              <br> <center><button class="btn widget uib_w_2 btn-success d-margins" data-uib="twitter%20bootstrap/button" id="sendPic" type="button" disabled="true" >ส่งข้อมูล</button></center>
+      </div>
+                                     <br><br><br>
+          
+                      
+                    
+    
+                                 </form>
+
+</fieldset>
+          </div>
+<script type="text/javascript" src="js/photo.js"></script>
+<script type="text/javascript">
+
+
+$( "#sendPic" ).click(function() {
+    $.post("http://police.cmhost.me/index.php/upload/addRecive/"+usId+"",
+    {
+        latitude: $("#latitude").val(),
+        longitude: $("#longitude").val(),
+         reqTitle: $("#reqTitle").val(),
+         reqLicensePlate: $("#reqLicensePlate").val(),
+         reqProvince: $("#reqProvince").val(),
+         codeImgGen: $("#codeImgGen").val()
+    },
+    function(data, status){
+          $("#loaddingStaget").load("photo.html");
+       
+    });
+});
+</script>
